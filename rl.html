@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <h2>Registration Page</h2>
+        <input id="User" placeholder="Username" /><br/><br/>
+        <input id="Pass" type="password" placeholder="Password" /><br/><br/>
+        <button onclick="reg()">Register</button>
+        <h2>Login page</h2>
+        <input id="lUser" placeholder="Username" /><br/><br/>
+        <input id="lPass" type="password" placeholder="Password" /><br/><br/>
+        <button onclick="log()">Register</button>
+        <p id="msg"></p>
+        <script>
+            function reg(){
+                if(!User.value||!Pass.value)return msg.innerText="All fileds required..!";
+                localStorage.Username=User.value;
+                localStorage.Password=Pass.value;
+                msg.innerText="Registration Successfull";
+            }
+            function log(){
+                if(!lUser.value||!lPass.value)return msg.innerText="All fileds required..!";
+                msg.innerText=(lUser.value===localStorage.Username&&lPass.value===localStorage.Password)
+                ? "Login Successfull" :"Wrong username or password";
+            }
+        </script>
+    </body>
+</html>
