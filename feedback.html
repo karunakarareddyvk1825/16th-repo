@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <h2>FeedBack Form</h2>
+        <input id="name" placeholder="ProductName" /><br/><br/>
+        <input id="price" placeholder="Price" /><br/><br/>
+        <textarea id="msg" placeholder="FeedBack" ></textarea><br/><br/>
+        <button onclick="save()">Submit</button>
+        <pre id="out"></pre>
+        <script>
+            let data=[];
+            function save(){
+                let n=document.getElementById('name').value;
+                let p=document.getElementById('price').value;
+                let m=document.getElementById('msg').value;
+                if(n&&p&&m){
+                    data.push({name:n,price:p,Feedback:m});
+                    out.textContent=JSON.stringify(data,null,3);
+                    name.value=price.value=msg.value="";
+                }
+            }
+        </script>
+    </body>
+</html>
